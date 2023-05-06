@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  text-generation-webui:
+    image: megalan247/text-generation-ui:latest
+    ports:
+      - 5000:5000
+      - 5005:5005
+      - 7860:7860
+    volumes:
+      - ./characters:/app/characters
+      - ./extensions:/app/extensions
+      - ./loras:/app/loras
+      - ./models:/app/models
+      - ./presets:/app/presets
+      - ./prompts:/app/prompts
+      - ./softprompts:/app/softprompts
+      - ./training:/app/training
