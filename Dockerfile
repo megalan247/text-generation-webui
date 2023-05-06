@@ -1,5 +1,5 @@
 FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
-RUN apt update && apt upgrade -y && apt install -y git wget build-essential curl git-lfs
+RUN apt update && apt upgrade -y && apt install -y git wget build-essential curl git-lfs && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && bash ~/miniconda.sh -b -p $HOME/miniconda
 WORKDIR /app
 RUN conda init bash && conda create -n textgen python=3.10.9
 RUN activate textgen
